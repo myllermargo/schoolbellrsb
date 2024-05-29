@@ -1,0 +1,140 @@
+/* ÜLDINE */
+body {
+    /*background-color: #fcfcfc;*/
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+html {
+  max-width: 100%;
+}
+h1,h2,h3,h4,h5 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.25rem;
+}
+
+.btn {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.btn:hover{
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+        transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  transform:skew(10.5);
+  cursor: pointer;
+}
+
+.btn-success {
+    background-color: #28A745;
+    border-color: #28A745;
+}
+
+.btn-xl {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  max-width: 50%; /*Peab nii suur olema, et telefonil mahuks tekst nupule */
+}
+
+.nav-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color:#2f4f4f;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.span-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  height: 35px;
+  max-width: fit-content;
+  background-color: #E4EBFC;
+  border-radius: 15px;
+  color:#115dff;
+  font-weight: 600;
+  margin: 0 auto; /* Paneb spani keskele */
+}
+
+/* Back to Top button algab */
+.back-to-top {
+  background-color: #0890ff;
+  color:#fcfcfc;
+  border-width: 0;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  padding: 14px;
+  display: none;
+}
+
+/* ÜLDISED KAARDID ALGAB */
+.card{
+  border-width: 0;
+  border-radius: 4px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 13px 36px;
+  cursor: pointer;
+}
+
+.card h3{
+font-weight: 400;
+text-align: center;
+}
+
+.card p {
+font-family: 'Quicksand', sans-serif;
+font-size: 1.25rem;
+}
+
+.card img{
+position: absolute;
+top: 20px;
+right: 15px;
+max-height: 215px;
+}
+/* ÜLDISED KAARDID LÕPPEB */
+
+.createEventBtn {
+	width: fit-content;
+	float: end;
+}
+
+.sidebar-title {
+	font-size: 24px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.nav-link {
+	color: white;
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.sidebar-bg {
+	background: linear-gradient(0deg, rgb(75, 207, 250) 6.3%, rgb(25, 159, 249) 98.9%);
+}
+.trashButton {
+position:relative;
+font-size:28px;
+top:-15px;
+}
+
+.puhadSaveBtn {
+	float: right;
+}
+
+
