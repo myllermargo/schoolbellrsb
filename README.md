@@ -5,6 +5,7 @@ Lülitab releed ja mängib muusikat vastavalt kalendris määratud kellaaegadele
 
 Schoolbell for raspberry pi<br>
 Main interface is website: php and mysql<br>
+Switshing relay o playing music <br>
 running cronjob on raspberry to triger switch and sound.<br>
 cronjob:
 <br>
