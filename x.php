@@ -1,7 +1,6 @@
 <?php
 date_default_timezone_set('Europe/Tallinn'); 
 require_once("con.php");
-//require_once("../koolikell/header.php");
 $pin = 17;
 $nr=0;
 $test=false;

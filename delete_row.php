@@ -1,5 +1,5 @@
 <?php
-require_once("../testing/con.php");
+require_once("con.php");
 
 
 

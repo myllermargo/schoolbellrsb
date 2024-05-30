@@ -1,5 +1,13 @@
 <meta charset="utf8">
+<?php
+session_start();
 
+// Check if the user is authenticated
+if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
+    header('Location: ../index.php');
+    exit();
+}
+?>
 <form action="logout.php" method="post">
     <input type="submit" name="logout" value="Logout">
 </form>

@@ -31,7 +31,7 @@ $stmt=$mysqli->prepare($kuvasql);
 $stmt->execute();
 $tulem=$stmt->get_result();
 if($tulem->num_rows>0){
-echo "<table id='kellaajadP' style='width: 100%;'  >"; //class='mdl-data-table stripe display'
+echo "<table id='kellaajadP' style='width: 100%;'  >"; 
 		echo "<thead>
 				<tr>
 					<th>ID</th>
@@ -55,7 +55,7 @@ while($rida=$tulem->fetch_assoc()){
             echo "<td>" . $rida["kuupaevL"] . "</td>";
             echo "<td>" . $rida["varu"] . "</td>";
 			echo "<td><div style='float:left;'><a href='?leht=edit_row&muutus=muudanK&table_name=$table_name&id=" . $id . "' tooltip='Muuda'><i class='fa-solid fa-pen-to-square fa-xl'></i></a> 
-		   | <a href='' class='deleteTimeBtn' tooltip='Kustuta' table_name='$table_name' onclick=\"OledKindel('$table_name', '{$id}')\"><i class='fa-solid fa-trash fa-xl'></i></a></div></td>";
+		   | <a href='' class='deleteTimeBtnRange' id='$id' tooltip='Kustuta' table_name='$table_name' onclickkk=\"OledKindel('$table_name', '{$id}')\"><i class='fa-solid fa-trash fa-xl'></i></a></div></td>";
            
             echo "</tr>";
         }
@@ -70,6 +70,7 @@ $stmt->close();
 ?>
 <form action="insert_rowPuh.php" method="post">
     <input type="hidden" name="table_name" value="<?php echo "Puhad"; ?>">
+    <input type="hidden" name="Pyhad" value="Pyha">
     Alguse kuupäev: <input type="date" name="kell1"   required>  Lõpu kuupäev<input type="date" name="kell2"   required>
     kommentaar: <input type="text" name="lisa" >
     <input type="submit" class="btn btn-outline-success" value="Lisa püha/d">

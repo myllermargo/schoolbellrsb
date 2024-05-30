@@ -9,8 +9,8 @@ $(".deleteTimeBtn").click(function(e) {
 		e.preventDefault();
 		console.log("a");
 		tableName = $('.deleteTimeBtn').attr('table_name');
-		ID = $('.deleteTimeBtn').attr('id');
-		console.log(ID);
+		ID = $(this).attr('id');
+		console.log($(this).attr('id'));
 		console.log(tableName);
 		Swal.fire({
 		  title: "Kas sa oled kindel?",
@@ -62,4 +62,42 @@ $(".LisaKuupaev").click(function(e) {
 			}
 		});
 		
+	});
+$(".deleteTimeBtnRange").click(function(e) {
+		e.preventDefault();
+		console.log("a");
+		tableName = $(this).attr('table_name');
+		ID = $(this).attr('id');
+		console.log($(this).attr('id'));
+		console.log(tableName);
+		Swal.fire({
+		  title: "Kas sa oled kindel?",
+		  text: "Teil ei ole võimalik antud aega taastada!",
+		  icon: "warning",
+		  showDenyButton: true,
+		  showCancelButton: true,
+		  confirmButtonText: 'Jah',
+		  denyButtonText: 'Ei',
+		  }).then((result) => {
+			  if (result.isConfirmed) {
+				   $.ajax({
+                    url: 'delete_row.php',
+                    method: 'post',
+					data: {table_name: tableName, id: ID},
+                    success:function(response) {
+						console.log(response);
+						Swal.fire({
+						  title: "Kustutatud!",
+						  text: "Rida on kustutatud.",
+						  icon: "success"
+						}).then(function() {
+							location.reload();
+						});
+                    }
+                });
+				
+			  } else if (result.isDenied) {
+				Swal.fire('Rida ei kustutatud', '', 'info');
+			  }
+		});
 	});
