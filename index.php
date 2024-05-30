@@ -27,13 +27,8 @@ if(!$_REQUEST['leht']){
 }else {
 	$leht="default";}
 
-
-
-
 ?>
 <?php require_once "header.php"; ?>
-
-
 			
 			<div class="col d-flex flex-column h-sm-100">
 				<main class="row overflow-auto">

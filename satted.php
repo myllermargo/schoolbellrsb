@@ -187,7 +187,7 @@ switch($ndlapaev){
 			?>
 
 			</select>
-			<input type="submit" class="btn btn-outline-success btnSalvestaKalender mb-1" value="Salvesta kordus">
+			<input type="submit" class="btn btn-outline-success btnSalvestaKordus mb-1" value="Salvesta kordus">
 		</div>
 	</div>
 </form>
@@ -231,7 +231,11 @@ $(".btnSalvestaKalender").click(function(e) { //Salvesta kalender nupu vajutamis
 	e.preventDefault(); //preventib
 	saadaTabel(); //käivitab functioni, datat pole vaja saata, function saab ise kõik elementide kaudu kätte
 });
- 
+//Salvest kordus
+ $(".btnSalvestaKordus").click(function(e) { //Salvesta kalender nupu vajutamisel
+	e.preventDefault(); //preventib
+	saadaKordus(); //käivitab functioni, datat pole vaja saata, function saab ise kõik elementide kaudu kätte
+});
 //Muusika salvestamine
 $(".btnSaveMusic").click(function(e) { //Salvesta kalender nupu vajutamisel
 	e.preventDefault(); //preventib
@@ -313,6 +317,26 @@ function kellaToo(){
 function saadaTabel() {
 	let dbTable = "seaded";
 	let action = "updateKalender"; //Saadan actioni, et update_settingus saaks teha eraldi sql statementi
+	let tableName = document.getElementById("tabelChoice");
+	let kalender = $('#tabelChoice').val();
+	console.log(kalender);
+	let rowID = 1;
+	$.ajax({
+		url: 'index.php?leht=update_settings',
+		method: 'post',
+		data: {table_name: dbTable, kalender: kalender, id: rowID, action: action},
+		success:function(response) {
+			Swal.fire('Salvestatud!', '', 'success').then(function() {
+				location.reload(); //Refreshib lehte, et kohe oleks tekstis uus tabeli nimi näha
+			});
+		}
+	});
+	
+}
+
+function saadaKordus() {
+	let dbTable = "seaded";
+	let action = "updateKordus"; //Saadan actioni, et update_settingus saaks teha eraldi sql statementi
 	let tableName = document.getElementById("tabelChoice");
 	let kalender = $('#tabelChoice').val();
 	console.log(kalender);
