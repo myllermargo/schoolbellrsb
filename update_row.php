@@ -1,6 +1,6 @@
 <?php
 
-require_once("../testing/con.php");
+require_once("con.php");
 
 // Function to sanitize input data
 function sanitize_input($data) {

@@ -8,7 +8,7 @@
 define('koolikell', true);
 
 date_default_timezone_set('Europe/Tallinn'); 
-require_once("../testing/con.php");
+require_once("con.php");
 function puhasta($data) {
     $data = trim($data);
     $data = stripslashes($data);

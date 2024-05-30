@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('Europe/Tallinn'); 
-require_once("../testing/con.php");
+require_once("con.php");
 ?>
 <!DOCTYPE html>
 <html>
