@@ -84,7 +84,12 @@ switch($ndlapaev){
 					$files = array_diff($files, array('.', '..'));
 
 					foreach ($files as $file) {
-						echo ' <option value="'.$file.'">'.substr($file,0,-17).' </option>';
+						$fileEdited = substr($file,0,-17);
+						if($lugu == $fileEdited) { //Selleks siin, et selectis oleks valitud lugu, mis on hetkel kasutusel
+							echo ' <option value="'.$file.'" selected>'.substr($file,0,-17).' </option>';
+						} else {
+							echo ' <option value="'.$file.'">'.substr($file,0,-17).' </option>';
+						}
 					}
 					?>
 				</select>
@@ -107,7 +112,11 @@ switch($ndlapaev){
 													?>
 			<?php
 													$nimi=substr($row[0],3);
-												  echo '<option value="KP_'.$nimi.'">'.$nimi.'</option>';
+													if($ajad == $nimi) {
+														echo '<option value="KP_'.$nimi.'" selected>'.$nimi.'</option>';
+													} else {
+														echo '<option value="KP_'.$nimi.'">'.$nimi.'</option>';		
+													}
 												   
 												}
 											}

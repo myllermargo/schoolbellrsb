@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('Europe/Tallinn'); 
-require_once("../testing/con.php");
+require_once("con.php");
 
 if(isset($_POST['table_name'])) {
     // Sanitize the table name

@@ -1,8 +1,6 @@
 
 <?php
-if (!defined('koolikell')) {
-    exit('otse ei saa');
-}
+
 
 
 $allowed_types = array('audio/mpeg', 'audio/wav', 'audio/x-wav');

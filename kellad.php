@@ -65,7 +65,7 @@ if (true) {
     <input type="hidden" name="table_name" value="<?php echo $table_name; ?>">
 	<div class="row col-xl-12">
 		<div class="col-sm-3">
-			Kell: <input type="time" class=" form-control shadow" name="kell"  required>
+			Kell: <input type="time" class="kellaValik form-control shadow" name="kell" onblur="validateTimeInput(this)" required>
 		</div>
 		<div class="col-sm-5">
 			Lisainfo: <input type="text" class=" form-control shadow" placeholder="Lisada siia märkmed" name="lisa" >
@@ -113,6 +113,13 @@ if (true) {
 			  } else if (result.isDenied) {
 				Swal.fire('Rida ei kustutatud', '', 'info');
 			  }
+		});
+	});
+	
+	$(function () {
+		$(".kellaValik").datetimepicker({
+			format: 'HH:mm',
+			showMeridian: false
 		});
 	});
 
