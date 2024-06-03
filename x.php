@@ -69,8 +69,8 @@ function checkTodaysTable(&$mysqli, &$musa, &$kelladTbl) {
 function togglePin($pin, $nr, $musa) {
     $cmd = "pigs w $pin 1";
     shell_exec($cmd);
-    //sleep(2);
-    usleep(500000);
+    sleep();
+    //usleep(500000);
     $cmd = "pigs w $pin 0";
     shell_exec($cmd);
     sleep(1);
