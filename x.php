@@ -67,14 +67,14 @@ function checkTodaysTable(&$mysqli, &$musa, &$kelladTbl) {
 		}	
 }
 function togglePin($pin, $nr, $musa) {
-    $cmd = "pigs w $pin 1";
-    shell_exec($cmd);
-    sleep();
-    //usleep(500000);
     $cmd = "pigs w $pin 0";
     shell_exec($cmd);
+    //sleep(2);
+    usleep(500000);
+    $cmd = "pigs w $pin 1";
+    shell_exec($cmd);
     sleep(1);
-    $cmd =sprintf("killall mpg123 &> /dev/null; mpg123 ../koolikell/muusika/%s  scriptname >/dev/null 2>/dev/null", $musa);
+    $cmd =sprintf("killall mpg123 &> /dev/null; mpg123 ./muusika/%s  scriptname >/dev/null 2>/dev/null", $musa);
     shell_exec($cmd);
 }
 if ($test){
