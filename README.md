@@ -10,3 +10,5 @@ running cronjob on raspberry to triger switch and sound.<br>
 cronjob:
 <br>
 7-16 * * 1-5 /usr/bin/php /var/www/x.php
+<br><br><br>
+<img src="/img/img.png" height="300px">
