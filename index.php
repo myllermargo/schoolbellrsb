@@ -1,7 +1,6 @@
 <meta charset="utf8">
 <?php
 session_start();
-
 // Check if the user is authenticated
 if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
     header('Location: ../index.php');
@@ -24,16 +23,16 @@ function puhasta($data) {
     return $data;
     
 }
-if(isset($_REQUEST['leht'])){
-if(!$_REQUEST['leht']){
-	$leht="default";
+if(isset($_REQUEST['page'])){
+if(!$_REQUEST['page']){
+	$page="default";
 } else {
-	$leht=$_REQUEST['leht'];
-	$leht=puhasta($leht);
+	$page=$_REQUEST['page'];
+	$page=puhasta($page);
 }
 
 }else {
-	$leht="default";}
+	$page="default";}
 
 ?>
 <?php require_once "header.php"; ?>
@@ -45,9 +44,9 @@ if(!$_REQUEST['leht']){
 					
 					<?php
 					
-						 if(preg_match('/^[a-zA-Z0-9_]+$/', $leht)) {
-							 $asukoht = './';
-							 $fail = $asukoht . $leht . '.php';
+						 if(preg_match('/^[a-zA-Z0-9_]+$/', $page)) {
+							 $location = './';
+							 $fail = $location . $page . '.php';
 							 if(file_exists($fail) && is_file($fail)) {
                       include $fail;
                      

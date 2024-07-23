@@ -24,12 +24,14 @@ if($kalRida['Tootab']==1){
 }
 </style>
 <?php
-$lugu=substr($kalRida['Muusika'],0,-17);
-$ajad=substr($kalRida['Kalender'],3);
+$lugu=$kalRida['Muusika'];
+
+$ajad=$kalRida['Kalender'];
+
 
 checkTodaysTable($mysqli, $lugu, $ajad);
-
-
+$lugu=substr($lugu,0,-17);
+$ajad=substr($ajad,3);
 echo "<p>Hetkel heliseb kell kellaaegade: <em><b>{$ajad}</b></em> järgi ja heliseb muusika:  <em><b>{$lugu}</b></em> järgi.</p>";
 
 
@@ -202,7 +204,7 @@ switch($ndlapaev){
 </form>
 </p><br><hr>
 <p>Kellaaegade tabeli loomine/kustutamine</p>
-<a href="index.php?leht=tabel" >Link</a><br>
+<a href="index.php?page=tabel" >Link</a><br>
 <hr>
 <p>Relee pinnid(PS! Muuda siis kui tead mida teed!!):</p>
 <form>

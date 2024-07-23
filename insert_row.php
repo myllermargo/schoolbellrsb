@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['table_name'])) {
 
             echo "Row inserted successfully";
             $table_name=substr($table_name,3);
-            header("Location: index.php?leht=kellad&table_name=$table_name");
+            header("Location: index.php?page=kellad&table_name=$table_name");
         } else {
             
             echo "Error inserting row: " . $stmt->error;

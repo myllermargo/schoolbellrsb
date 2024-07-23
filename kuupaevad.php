@@ -32,7 +32,7 @@ $kask=$mysqli ->query($sql);
 while($result=$kask ->fetch_assoc()){
 	echo "<tr>";
 	echo "<td>".$result['id']."</td><td>".$result['kuupaev']."</td><td>".substr($result['kalender'],3)."</td><td>".substr($result['heli'],0,-17)."</td>";
-	echo "<td><div style='float:left;'><a href='?leht=edit_row&muutus=muudanEri&id=".$result['id']."' tooltip='Muuda'><i class='fa-solid fa-pen-to-square fa-xl'></i></a> 
+	echo "<td><div style='float:left;'><a href='?page=edit_row&muutus=muudanEri&id=".$result['id']."' tooltip='Muuda'><i class='fa-solid fa-pen-to-square fa-xl'></i></a> 
 		   | <a href='' class='deleteTimeBtn' tooltip='Kustuta' id='".$result['id']."' table_name='Kuupaevad' ><i class='fa-solid fa-trash fa-xl'></i></a></div></td>";
            
 	echo "</tr>";

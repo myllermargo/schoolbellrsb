@@ -12,8 +12,7 @@ if ($mysqli->connect_error) {
 	<meta charset="utf8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="Mario M">
-	<meta name="description" content="Veebilehtede tegemise põhi">
+
 	<title>Koolikell</title>
 	<link rel="stylesheet" href="./css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,17 +24,6 @@ if ($mysqli->connect_error) {
 	<link href="./css/material-components-web.min.css" rel="stylesheet">
 	<link href="./css/dataTables.material.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.9.4/dist/css/tempus-dominus.min.css" crossorigin="anonymous">
- <!--
- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/main.css">
-	<link href="https://cdn.datatables.net/v/bs5/dt-2.0.3/date-1.5.2/r-3.0.1/sp-2.3.0/datatables.min.css" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/14.0.0/material-components-web.min.css" rel="stylesheet">
-	<link href="https://cdn.datatables.net/2.0.3/css/dataTables.material.css" rel="stylesheet">
-	-->
 		
 	<?php require_once "footer.php"; ?>
 	
@@ -100,7 +88,7 @@ input[type=text]{
 																if ($result->num_rows > 0) {
 									while ($row = $result->fetch_row()) {
 										$nimi=substr($row[0],3);
-									  echo '<li><a class="dropdown-item" href="?leht=kellad&table_name='.$nimi.'">'.$nimi.'</a></li>';
+									  echo '<li><a class="dropdown-item" href="?page=kellad&table_name='.$nimi.'">'.$nimi.'</a></li>';
 									   
 									}
 								}else { echo "halb"; }
@@ -109,15 +97,15 @@ input[type=text]{
 							</ul>
 						</li>
 						<li>
-							<a href="?leht=puhkepaevad" class="nav-link px-sm-0 px-2">
+							<a href="?page=puhkepaevad" class="nav-link px-sm-0 px-2">
 								<i class="fa-solid fa-calendar-days"></i><span class="ms-1 d-none d-sm-inline">Puhkepäevad</span></a>
 						</li>
 						<li>
-							<a href="?leht=kuupaevad" class="nav-link px-sm-0 px-2">
+							<a href="?page=kuupaevad" class="nav-link px-sm-0 px-2">
 								<i class="fa-solid fa-calendar-days"></i><span class="ms-1 d-none d-sm-inline">Eri kuupäevad</span></a>
 						</li>
 						<li>
-							<a href="?leht=satted" class="nav-link px-sm-0 px-2">
+							<a href="?page=satted" class="nav-link px-sm-0 px-2">
 								<i class="fa-solid fa-gear"></i></i><span class="ms-1 d-none d-sm-inline">Sätted</span> </a>
 						</li>
 					</ul>

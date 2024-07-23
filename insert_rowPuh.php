@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Pyhad']) && $_POST['Py
     $kask->bind_param("sss",$kuupaev,$kuupaev2,$lisa);
     $kask->execute();
     $kask->close();
-    header("Location: index.php?leht=puhkepaevad");
+    header("Location: index.php?page=puhkepaevad");
 }
 ?>
 

@@ -42,7 +42,7 @@ if (true) {
             echo "<td>" . $row["id"] . "</td>";
             echo "<td><div style='float:right;'>" . $row["kell"] . "</div></td>";
             echo "<td>" . $row["lisa"] . "</td>";
-           echo "<td><div style='float: right;'><a href='?leht=edit_row&muutus=muuda&table_name=$table_name&id=" . $row["id"] . "' tooltip='Muuda'><i class='fa-solid fa-pen-to-square fa-xl'></i></a> 
+           echo "<td><div style='float: right;'><a href='?page=edit_row&muutus=muuda&table_name=$table_name&id=" . $row["id"] . "' tooltip='Muuda'><i class='fa-solid fa-pen-to-square fa-xl'></i></a> 
 		   | <a href='#' class='deleteTimeBtn' tooltip='Kustuta' table_name='$table_name' id='$id'><i class='fa-solid fa-trash fa-xl'></i></a></div></td>";
 
             echo "</tr>";
@@ -102,7 +102,7 @@ if (true) {
 		  }).then((result) => {
 			  if (result.isConfirmed) {
 				   $.ajax({
-                    url: 'index.php?leht=delete_row',
+                    url: 'index.php?page=delete_row',
                     method: 'post',
 					data: {table_name: tableName, id: ID},
                     success:function(response) {

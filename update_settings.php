@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->execute()) {
 
             $table_name=substr($table_name,3);
-            header("Location: index.php?leht=satted");
+            header("Location: index.php?page=satted");
             exit();
         } else {
 

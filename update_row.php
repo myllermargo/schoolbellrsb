@@ -26,10 +26,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST['piniMuutus'] )&& intval($
             if ($stmt->error) {
     echo "Error: " . $stmt->error;
 }
-         header("Location: index.php?leht=seaded");
+         header("Location: index.php?page=seaded");
             exit();
         }else{
-            header("Location: index.php?leht=seaded");
+            header("Location: index.php?page=seaded");
            } 
     }
 }
@@ -52,10 +52,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['TootabS']) && !empty($
             if ($stmt->error) {
     echo "Error: " . $stmt->error;
 }
-         header("Location: index.php?leht=seaded");
+         header("Location: index.php?page=seaded");
             exit();
         }else{
-            header("Location: index.php?leht=seaded");
+            header("Location: index.php?page=seaded");
            }
     }
 }
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['table_name']) && isset
         if ($stmt->execute()) {
 
             $table_name=substr($table_name,3);
-            header("Location: index.php?leht=kellad&table_name=$table_name");
+            header("Location: index.php?page=kellad&table_name=$table_name");
             exit();
         } else {
 
@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['muutus'] == "muudanK") {
 
         if ($stmt->execute()) {
 
-            header("Location: index.php?leht=puhkepaevad");
+            header("Location: index.php?page=puhkepaevad");
             exit();
         } else {
 
@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['muutus'] == "muudanEri") {
 
         if ($stmt->execute()) {
 
-            header("Location: index.php?leht=kuupaevad");
+            header("Location: index.php?page=kuupaevad");
             exit();
         } else {
 

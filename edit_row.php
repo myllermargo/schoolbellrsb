@@ -174,7 +174,7 @@ $(document).ready(function() {
 				  text: "Teie tehtud muudatused on salvestatud.",
 				  icon: "success"
 				}).then(function() {
-					window.location = "index.php?leht=puhkepaevad";
+					window.location = "index.php?page=puhkepaevad";
 				});
 			}
 		});
@@ -194,7 +194,7 @@ $(document).ready(function() {
 				  text: "Teie tehtud muudatused on salvestatud.",
 				  icon: "success"
 				}).then(function() {
-					window.location = "index.php?leht=kellad&table_name="+tableName.substring(3);
+					window.location = "index.php?page=kellad&table_name="+tableName.substring(3);
 				});
 			}
 		});
@@ -214,7 +214,7 @@ $(document).ready(function() {
 				  text: "Teie tehtud muudatused on salvestatud.",
 				  icon: "success"
 				}).then(function() {
-					window.location = "index.php?leht=kuupaevad";
+					window.location = "index.php?page=kuupaevad";
 				});
 			}
 		});

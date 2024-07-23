@@ -20,7 +20,7 @@ if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
             // Move uploaded file to the target folder
             if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
                 echo 'Kõik korras';
-                header("Location: index.php?leht=satted");
+                header("Location: index.php?page=satted");
             } else {
                 echo 'Ei saa panna kasusta';
             }

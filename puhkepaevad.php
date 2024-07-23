@@ -54,7 +54,7 @@ while($rida=$tulem->fetch_assoc()){
             echo "<td>" . date($rida["kuupaevA"]) . "{$aju}</td>";
             echo "<td>" . $rida["kuupaevL"] . "</td>";
             echo "<td>" . $rida["varu"] . "</td>";
-			echo "<td><div style='float:left;'><a href='?leht=edit_row&muutus=muudanK&table_name=$table_name&id=" . $id . "' tooltip='Muuda'><i class='fa-solid fa-pen-to-square fa-xl'></i></a> 
+			echo "<td><div style='float:left;'><a href='?page=edit_row&muutus=muudanK&table_name=$table_name&id=" . $id . "' tooltip='Muuda'><i class='fa-solid fa-pen-to-square fa-xl'></i></a> 
 		   | <a href='' class='deleteTimeBtnRange' id='$id' tooltip='Kustuta' table_name='$table_name' onclickkk=\"OledKindel('$table_name', '{$id}')\"><i class='fa-solid fa-trash fa-xl'></i></a></div></td>";
            
             echo "</tr>";
