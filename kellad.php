@@ -1,3 +1,4 @@
+   
     <style>      
 
 table, th, td {
@@ -43,7 +44,7 @@ if (true) {
             echo "<td><div style='float:right;'>" . $row["kell"] . "</div></td>";
             echo "<td>" . $row["lisa"] . "</td>";
            echo "<td><div style='float: right;'><a href='?page=edit_row&muutus=muuda&table_name=$table_name&id=" . $row["id"] . "' tooltip='Muuda'><i class='fa-solid fa-pen-to-square fa-xl'></i></a> 
-		   | <a href='#' class='deleteTimeBtn' tooltip='Kustuta' table_name='$table_name' id='$id'><i class='fa-solid fa-trash fa-xl'></i></a></div></td>";
+		   | <a href='#' class='deleteTimeBtn' tooltip='Kustuta' table_name='$table_name' idee='$id'><i class='fa-solid fa-trash fa-xl'></i>$id</a></div></td>";
 
             echo "</tr>";
         }
@@ -76,6 +77,11 @@ if (true) {
 		</div>
 </form>
 	<script>
+	  const et = {
+    locale: 'et',
+    format: 'HH:mm',
+    // Add other localization settings as needed
+};
 		new DataTable('#kellaajad', {
 			paging: false,
 			responsive: true,
@@ -83,12 +89,20 @@ if (true) {
 				url: '//cdn.datatables.net/plug-ins/2.0.3/i18n/et.json',
 			},
 		});
-	
-	$(".deleteTimeBtn").click(function(e) {
+	$(document).on('click', '.deleteTimeBtn', function() {
+    var clickedButtonId = $(this).attr('idee');
+    console.log('Clicked button ID:', clickedButtonId);
+});
+	//$(".deleteTimeBtn").click(function(e) {
+	$(document).on('click', '.deleteTimeBtn', function(e) {
+	  const rows = document.querySelectorAll('.deleteTimeBtn');
+	  
 		e.preventDefault();
 		console.log("a");
-		tableName = $('.deleteTimeBtn').attr('table_name');
-		ID = $('.deleteTimeBtn').attr('id');
+		//var tableName = $('.deleteTimeBtn').attr('table_name');
+		var tableName = $(this).attr('table_name');
+		//ID = $('.deleteTimeBtn').attr('idee');
+		ID = $(this).attr('idee');
 		console.log(ID);
 		console.log(tableName);
 		Swal.fire({

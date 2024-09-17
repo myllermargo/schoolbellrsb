@@ -1,3 +1,11 @@
+<?php 
+/*require_once '../kasjah.php';
+if (!is_logged_in()) {
+   header('Location: ../index.php');
+    exit();
+}*/
+
+?>
 <meta http-equiv="refresh" content="60">
 
 <?php 

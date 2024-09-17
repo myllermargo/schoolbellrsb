@@ -74,7 +74,7 @@ function togglePin($pin, $nr, $musa) {
     $cmd = "pigs w $pin 1";
     shell_exec($cmd);
     sleep(1);
-    $cmd =sprintf("killall mpg123 &> /dev/null; mpg123 ./muusika/%s  scriptname >/dev/null 2>/dev/null", $musa);
+    $cmd =sprintf("killall mpg123 &> /dev/null; mpg123 -f 34000 ./muusika/%s  scriptname >/dev/null 2>/dev/null", $musa);
     shell_exec($cmd);
 }
 if ($test){

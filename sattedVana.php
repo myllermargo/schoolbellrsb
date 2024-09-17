@@ -1,10 +1,10 @@
 <?php
-
+/*require_once '../kasjah.php'; // Include the session management functions
+if (!is_logged_in()) {
+   header('Location: ../index.php'); // Redirect to the login page if not logged in
+    exit();
+}*/
 echo "Sätted";
-
-?>
-<br>
-<?php
 
 $sql="SELECT id, Tootab, Kalender, Muusika FROM seaded";
 $tulem=$mysqli->query($sql);

@@ -1,11 +1,18 @@
 <meta charset="utf8">
 <?php
 session_start();
-// Check if the user is authenticated
+require_once ('../kasjah.php');
+if (!is_logged_in()) {
+    echo $_SESSION['username']."sin";
+  header('Location: ../index.php');
+    exit();
+}
+
+/* Check if the user is authenticated
 if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
     header('Location: ../index.php');
     exit();
-}
+}*/
 ?>
 <form action="logout.php" method="post">
     <input type="submit" name="logout" value="Logout">
@@ -13,7 +20,7 @@ if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
 
 <?php
 define('koolikell', true);
-
+//print_r($_SESSION);
 date_default_timezone_set('Europe/Tallinn'); 
 require_once("con.php");
 function puhasta($data) {
@@ -23,6 +30,7 @@ function puhasta($data) {
     return $data;
     
 }
+
 if(isset($_REQUEST['page'])){
 if(!$_REQUEST['page']){
 	$page="default";
