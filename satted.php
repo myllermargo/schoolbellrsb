@@ -32,7 +32,23 @@ if($kalRida['Tootab']==1){
 $lugu=$kalRida['Muusika'];
 
 $ajad=$kalRida['Kalender'];
-
+$ndlapaev=$kalRida['ndlaPaev'];
+if(date('w')==$ndlapaev){
+switch($ndlapaev){
+	case "1":
+	case "2":
+	case "3":
+	case "4":
+	case "5":
+	$ajad=$kalRida['ndlpKalender'] ;
+	break;
+	 case "6":
+	    $ajad=$kalRida['Kalender'];
+	    break;
+}
+}else {
+	$ajad=$kalRida['Kalender'] ;
+}
 
 checkTodaysTable($mysqli, $lugu, $ajad);
 $lugu=substr($lugu,0,-17);
@@ -213,8 +229,25 @@ switch($ndlapaev){
 <hr>
 <p>Relee pinnid(PS! Muuda siis kui tead mida teed!!):</p>
 <form>
-<label for="pin1" name="silt1"> Relee1:</label><input name="PinOne" type="number" id="pin1" value="<?= $kalRida['PinOne']; ?>" style="width: 7ch;" min="7" max="25" onchange="pinnideMuutus(name,value)"><br>
-<label for="pin2" name="silt2"> Relee2:</label><input name="PinTwo" type="number" id="pin2" value="<?= $kalRida['PinTwo']; ?>" style="width: 7ch;" min="7" max="25" onchange="pinnideMuutus(name,value)">
+	in1 pin 22 ja jõulud event4<br>
+	in2 pin 17 ja tavaline event5<br>
+	in3 pin 23 input1 va helisysteem<br>
+	in4 pin 24 event 6 rickroll event6 <br>
+	
+<style>
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style>
+<label for="pin2" name="silt2"> hetkel pin: :</label><input name="PinTwo" type="number" id="pin2" value="<?= $kalRida['PinTwo']; ?>" style="width: 7ch;" min="7" max="25" onchange="pinnideMuutus(name,value)">
 </form>
 <hr>
 <script>

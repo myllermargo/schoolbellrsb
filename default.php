@@ -30,14 +30,29 @@ $result = mysqli_query($mysqli, $sql);
 $row = mysqli_fetch_assoc($result);
 $algus = ($row['algus'] ?? '');
 $lopp = ($row['lopp'] ?? '');
+setlocale(LC_ALL, 'ee_ET');
 if($algus){
 
 echo "hetkel on  ".$algus."  püha kuni ".$lopp ;
 } else {
-	echo "tavaline päev";
+	echo strftime('%A');
 
 
-
+switch (date('w')){
+	case "0":
+	$seadedRida['Tootab']=false;
+	break;
+	case "1":
+	case "2":
+	case "3":
+	case "4":
+	case "5":
+	//$seadedRida['Tootab']=true;
+	break;
+	case "6":
+		$seadedRida['Tootab']=false;
+	break;
+}
 //
 if ($seadedRida['Tootab']==true){
  $ndlapaev=$seadedRida['ndlaPaev'];
@@ -58,8 +73,9 @@ switch($ndlapaev){
 	$kal=$seadedRida['Kalender'] ;
 }
 
+
 checkTodaysTable($mysqli, $kal);
-	echo "<p><br>kell töötab aegade tabeli: ".substr($kal,3)." järgi<br>";
+	echo "<p><br>kell töötab aegade tabeli: <strong>".substr($kal,3)."</strong> järgi<br>";
 	//$sql_before = "SELECT * FROM $kellaajad WHERE kell < '$praeguKell' ORDER BY kell DESC LIMIT 1";
 
 
@@ -79,7 +95,7 @@ checkTodaysTable($mysqli, $kal);
 	if(empty($row_after['kell'])){
 	echo "Järgmine helin alles homme hommikul<br>";}
 	else{
-	echo "Järgmise kella helisemise aeg: " . $row_after['kell'] . "<br></p>";
+	echo "Järgmise kella helisemise aeg: " . $row_after['kell'] . "  ->".$row_after['lisa'] ."</p>";
 	}
 } else {
 	echo "<p>Hetkel kas puhkepäev, püha või kell lihtsalt on välja lülitud</p>";

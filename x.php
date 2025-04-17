@@ -25,6 +25,7 @@ if($seadRida['Tootab']==1){
     $tootab=false;
 }
 $ndlapaev=$seadRida['ndlaPaev'];
+$pin=$seadRida['PinOne'];
 $musa=$seadRida['Muusika'];
  if(date('w')==$ndlapaev){
     switch($ndlapaev){

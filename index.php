@@ -1,4 +1,6 @@
+<!DOCTYPE html>
 <meta charset="utf8">
+<link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 <?php
 session_start();
 require_once ('../kasjah.php');
@@ -8,11 +10,6 @@ if (!is_logged_in()) {
     exit();
 }
 
-/* Check if the user is authenticated
-if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
-    header('Location: ../index.php');
-    exit();
-}*/
 ?>
 <form action="logout.php" method="post">
     <input type="submit" name="logout" value="Logout">
@@ -20,7 +17,7 @@ if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
 
 <?php
 define('koolikell', true);
-//print_r($_SESSION);
+//print_r(session_status());
 date_default_timezone_set('Europe/Tallinn'); 
 require_once("con.php");
 function puhasta($data) {

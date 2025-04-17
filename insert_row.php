@@ -1,9 +1,5 @@
 <?php
-/*require_once( '../kasjah.php');
-if (!is_logged_in()) {
-   header('Location: ../index.php');
-    exit();
-}*/
+
 require_once("con.php");
 
 // Function to sanitize input data
